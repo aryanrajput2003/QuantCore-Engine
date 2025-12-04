@@ -12,7 +12,7 @@ Interactive CLI: Dashboard interface for placing orders and visualizing market d
 * G++ Compiler (supporting C++17) or CMake
 
 ### Build
-g++ -std=c++17 main.cpp OrderBook.cpp -o QuantCore
+*g++ -std=c++17 main.cpp OrderBook.cpp -o QuantCore
 
 ### Run
-./QuantCore
+*./QuantCore
