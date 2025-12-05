@@ -12,7 +12,6 @@ void clearInput() {
 }
 
 int main() {
-    // A map that stores a separate OrderBook for every ticker symbol.
     map<string, OrderBook> exchange;
 
     bool isRunning = true;
@@ -37,7 +36,6 @@ int main() {
         }
 
         if (choice == 1) {
-            // --- NEW: Ask for the Ticker Symbol ---
             string symbol;
             cout << "Enter Stock Symbol (e.g., RELIANCE, TCS): ";
             cin >> symbol;
@@ -57,8 +55,6 @@ int main() {
             cout << "Enter Quantity: ";
             cin >> quantity;
 
-            // --- EXECUTION ---
-            // The map automatically creates a new Book if 'symbol' doesn't exist yet!
             cout << "Sending Order to " << symbol << " book...\n";
             exchange[symbol].addOrder(orderIdCounter++, price, quantity, side, OrderType::Limit);
             
@@ -68,7 +64,6 @@ int main() {
             cout << "Enter Stock Symbol to View: ";
             cin >> symbol;
 
-            // Check if this stock exists in our exchange
             if (exchange.find(symbol) != exchange.end()) {
                 cout << "\n--- Order Book for " << symbol << " ---\n";
                 exchange[symbol].printBook();
